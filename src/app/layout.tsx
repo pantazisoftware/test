@@ -1,6 +1,7 @@
 import { Provider } from "@/components/providers/theme-provider";
 import { Toaster } from "@/components/ui/toaster";
 import { cn } from "@/lib/utils";
+import { Analytics } from '@vercel/analytics/react';
 import type { Metadata } from 'next';
 import { Poppins } from "next/font/google";
 import "./globals.css";
@@ -26,6 +27,7 @@ export default function RootLayout({
       <body className={cn(poppins.className, "dark:bg-black bg-white")}>
         <Provider>{children}</Provider>
         <Toaster />
+        <Analytics />
       </body>
     </html>
   );
