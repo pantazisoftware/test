@@ -6,10 +6,10 @@ import { toast } from "@/components/ui/use-toast";
 
 import { UploadButton } from "@/lib/uploadthing";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { User } from "@prisma/client";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
 
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   Form,
   FormControl,
@@ -18,10 +18,10 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import { Session } from "next-auth";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { updatePersonalInfo } from "../_actions/update-info-action";
-import { Session } from "next-auth";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const formSchema = z.object({
   name: z.string(),
@@ -56,18 +56,19 @@ export function PersonalInfo({ session }: { session: Session }) {
           <CardTitle>Account</CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="flex flex-col sm:flex-row items-start gap-8">
+          <div className="flex flex-col items-start gap-8 sm:flex-row">
             <div className="flex flex-col shrink-0 sm:w-[250px]">
-              <p className="text-sm pb-2 font-medium leading-none">
+              <p className="pb-2 text-sm font-medium leading-none">
                 Profile picture
               </p>
 
               <div className="flex items-center gap-8">
-                <img
+                <Image
                   src={"" + session.user.image}
-                  className="w-20 h-20 rounded-md"
+                  alt="Profile Picture"
+                  className="w-20 h-20 rounded-md aspect-square"
                 />
-                <div className="rounded-md dark:border-zinc-800 border-zinc-200 border border-dashed px-6 py-4 text-sm">
+                <div className="px-6 py-4 text-sm border border-dashed rounded-md dark:border-zinc-800 border-zinc-200">
                   <UploadButton
                     className="shrink-0"
                     endpoint="profilePictureUploader"
@@ -95,7 +96,7 @@ export function PersonalInfo({ session }: { session: Session }) {
             <Form {...form}>
               <form
                 onSubmit={form.handleSubmit(onSubmit)}
-                className="space-y-4 w-full"
+                className="w-full space-y-4"
               >
                 <FormField
                   control={form.control}

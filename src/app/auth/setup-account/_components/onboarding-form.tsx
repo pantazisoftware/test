@@ -21,6 +21,7 @@ import {
 } from "@/components/ui/form";
 import { GradientBorder } from "@/components/ui/gradient-border";
 import { Hand } from "lucide-react";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 
 const onboardingSchema = z.object({
@@ -50,19 +51,19 @@ export function OnboardingForm({ user }: { user: User }) {
   }
 
   return (
-    <div className="flex flex-col gap-8 max-w-lg m-auto w-full ">
-      <GradientBorder className="rounded-full w-fit dark:bg-black bg-white">
-        <div className="w-10 h-10 shrink-0 grid place-items-center">
+    <div className="flex flex-col w-full max-w-lg gap-8 m-auto ">
+      <GradientBorder className="bg-white rounded-full w-fit dark:bg-black">
+        <div className="grid w-10 h-10 shrink-0 place-items-center">
           <Hand size={18} />
         </div>
       </GradientBorder>
   
-      <h1 className="font-medium text-lg">
+      <h1 className="text-lg font-medium">
         Finish setting up your account
       </h1>
       <div className="flex items-center gap-8">
-        <img src={"" + user.image} className="w-20 h-20 rounded-md" />
-        <div className="rounded-md dark:border-zinc-800 border-zinc-200 border border-dashed px-6 py-4 text-sm">
+        <Image src={"" + user.image}  alt="Profile picture" className="w-20 h-20 rounded-md" />
+        <div className="px-6 py-4 text-sm border border-dashed rounded-md dark:border-zinc-800 border-zinc-200">
           <UploadButton
             endpoint="profilePictureUploader"
             onClientUploadComplete={(res) => {
