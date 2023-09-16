@@ -27,6 +27,7 @@ specifiers:
   '@types/react': 18.2.21
   '@types/react-dom': 18.2.7
   '@uploadthing/react': 5.5.0
+  '@vercel/analytics': ^1.0.2
   autoprefixer: 10.4.15
   axios: 1.5.0
   class-variance-authority: 0.7.0
@@ -86,6 +87,7 @@ dependencies:
   '@types/react': 18.2.21
   '@types/react-dom': 18.2.7
   '@uploadthing/react': 5.5.0_arvhnliealntgz4taz5aggoy2i
+  '@vercel/analytics': 1.0.2
   autoprefixer: 10.4.15_postcss@8.4.29
   axios: 1.5.0
   class-variance-authority: 0.7.0
@@ -2320,6 +2322,10 @@ packages:
         optional: true
     dependencies:
       zod: 3.22.2
+    dev: false
+
+  /@vercel/analytics/1.0.2:
+    resolution: {integrity: sha512-BZFxVrv24VbNNl5xMxqUojQIegEeXMI6rX3rg1uVLYUEXsuKNBSAEQf4BWEcjQDp/8aYJOj6m8V4PUA3x/cxgg==}
     dev: false
 
   /abbrev/1.1.1:
