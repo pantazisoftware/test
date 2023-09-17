@@ -52,6 +52,7 @@ export default function Page() {
             placeholder="Insert your email address"
           />
         </div>
+        <div className="flex flex-col space-y-2">
         <Button
           disabled={loading}
           onClick={() => {
@@ -63,6 +64,18 @@ export default function Page() {
         >
           Continue with Email
         </Button>
+        <Button variant='secondary'
+          disabled={loading}
+          onClick={() => {
+            setLoading(true);
+            signIn("github", {callbackUrl: "/dashboard" });
+            setLoading(false);
+          }}
+          className="rounded-md"
+        >
+          Signin with Github
+        </Button>
+        </div>
       </div>
       <p className="pt-4 text-xs text-zinc-400">
         By signing in, you agree to our terms, acceptable use, and privacy
