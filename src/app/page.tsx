@@ -26,9 +26,12 @@ export default async function Home() {
       <div className={"relative z-10"}>
         <div className="z-10 w-full p-4 m-auto border max-w-7xl border-white/30 sm:p-8 bg-white/20 rounded-3xl">
           <Image alt="Billing"
+            layout="responsive"
+            width={100}
+            height={100}
             src="/assets/billing.png"
             className="z-10 p-4 bg-black rounded-xl"
-          ></Image>
+           />
         </div>
         <div className="top-20 bottom-20 w-full bg-gradient-conic from-rose-500 via-violet-400 to-amber-500 absolute z-[-1]" />
       </div>

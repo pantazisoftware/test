@@ -19,6 +19,7 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 
 const onboardingSchema = z.object({
@@ -48,9 +49,9 @@ export function OnboardingForm({ user }: { user: User }) {
   }
 
   return (
-    <div className="flex flex-col m-auto w-full ">
+    <div className="flex flex-col w-full m-auto ">
       <div className="flex flex-col pb-8">
-        <p className="dark:text-white text-black text-lg font-medium text-center">
+        <p className="text-lg font-medium text-center text-black dark:text-white">
          Add Account Details
         </p>
       </div>
@@ -60,7 +61,9 @@ export function OnboardingForm({ user }: { user: User }) {
       <p className="text-xs font-normal leading-none opacity-50">OPTIONAL</p>
       </div>
       <div className="flex items-center gap-8 pb-4">
-        <img
+        <Image alt="profile" layout="responsive"
+        width={30}
+        height={30}
           src={
             user.image?.length
               ? user.image
@@ -68,7 +71,7 @@ export function OnboardingForm({ user }: { user: User }) {
           }
           className="w-20 h-20 rounded-full"
         />
-        <div className="rounded-md w-full dark:border-zinc-800 border-zinc-200 border border-dashed px-6 py-4 text-sm">
+        <div className="w-full px-6 py-4 text-sm border border-dashed rounded-md dark:border-zinc-800 border-zinc-200">
           <UploadButton
             endpoint="profilePictureUploader"
             onClientUploadComplete={(res) => {
@@ -82,7 +85,7 @@ export function OnboardingForm({ user }: { user: User }) {
             onUploadError={(error: Error) => {
               toast({
                 title: "Error",
-                description: "There was an error chaning your profile picture",
+                description: "There was an error changing your profile picture",
                 variant: "destructive",
               });
             }}

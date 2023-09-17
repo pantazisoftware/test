@@ -28,7 +28,7 @@ export const ourFileRouter = {
                     id: metadata.userId
                 },
                 data: {
-                    image: file.url
+                    image: "test.jpg"
                 }
             })
 
