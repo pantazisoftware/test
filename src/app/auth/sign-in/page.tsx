@@ -26,30 +26,30 @@ export default function Page() {
   return (
     <div className="flex flex-col">
       {authError && (
-        <Alert variant={"destructive"} className="space-x-2 mb-6">
+        <Alert variant={"destructive"} className="mb-6 space-x-2">
           <AlertTriangle />
           <p>{"There was an error sending your sign in link"}</p>
         </Alert>
       )}
-      <GradientBorder className="rounded-full w-fit dark:bg-black bg-white">
-        <div className="w-10 h-10 shrink-0 grid place-items-center">
+      <GradientBorder className="bg-white rounded-full w-fit dark:bg-black">
+        <div className="grid w-10 h-10 shrink-0 place-items-center">
          <Lock size={18} />
         </div>
       </GradientBorder>
 
       <div className="flex flex-col py-8">
-        <p className="dark:text-white text-black text-lg font-medium">Welcome</p>
+        <p className="text-lg font-medium text-black dark:text-white">Welcome</p>
         <p className="text-zinc-400">
           {"Please sign in or sign up below."}
         </p>
       </div>
       <div className="flex flex-col">
         <div className="flex flex-col pb-4">
-          <p className="text-sm text-zinc-400 pb-2">Email</p>
+          <p className="pb-2 text-sm text-zinc-400">Email</p>
           <Input
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            placeholder="martin.shrekli@turing.com"
+            placeholder="Insert your email address"
           />
         </div>
         <Button
@@ -64,7 +64,7 @@ export default function Page() {
           Continue with Email
         </Button>
       </div>
-      <p className="text-xs text-zinc-400 pt-4">
+      <p className="pt-4 text-xs text-zinc-400">
         By signing in, you agree to our terms, acceptable use, and privacy
         policy.
       </p>
