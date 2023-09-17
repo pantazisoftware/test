@@ -3,16 +3,16 @@ import { Toaster } from "@/components/ui/toaster";
 import { cn } from "@/lib/utils";
 import { Analytics } from '@vercel/analytics/react';
 import type { Metadata } from 'next';
-import { Poppins } from "next/font/google";
+import { Archivo } from "next/font/google";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: 'SaaS Kit',
-  description: 'The ultimate SaaS Kit. Build this weekend, ship on monday.',
+  title: 'MozoCode - Ultimate UI Library and Ready to use Templates',
+  description: '',
   icons: '/logo.svg'
 }
 
-const poppins = Poppins({
+const poppins = Archivo({
   subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
@@ -24,7 +24,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={cn(poppins.className, "dark:bg-black bg-white")}>
+      <body className={cn(poppins.className, "dark:bg-black bg-white antialiased")}>
         <Provider>{children}</Provider>
         <Toaster />
         <Analytics />

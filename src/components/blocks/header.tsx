@@ -9,6 +9,7 @@ import {
   Sun
 } from "lucide-react";
 import { useTheme } from "next-themes";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
@@ -67,16 +68,16 @@ export function Header() {
 
   return (
     <div className="flex flex-col">
-      <div className="h-16 flex flex-col justify-center w-full">
-        <nav className="max-w-7xl m-auto px-4 w-full relative">
+      <div className="flex flex-col justify-center w-full h-16">
+        <nav className="relative w-full px-4 m-auto max-w-7xl">
           <div className="flex items-center gap-8">
             <div className="rounded-lg">
-              <Link href={"/"} className=" z-10">
-                <img src="/logo.svg" className="w-10 h-10 rounded-full" />
+              <Link href={"/"} className="z-10 ">
+                <Image alt="Logo" src="/logo.svg" className="w-10 h-10 rounded-full" />
               </Link>
             </div>
 
-            <div className="sm:flex items-center gap-4 hidden ">
+            <div className="items-center hidden gap-4 sm:flex ">
               {tabs.map((tab) => (
                 <Link
                   key={tab.id}
@@ -104,7 +105,7 @@ export function Header() {
                 </Link>
               ))}
             </div>
-            <div className="flex items-center gap-4 ml-auto relative">
+            <div className="relative flex items-center gap-4 ml-auto">
               {mounted && (
                 <Toggle
                   onClick={() =>
@@ -116,7 +117,7 @@ export function Header() {
               )}
               <Link href={"/auth"}>
                 <Button
-                  className="rounded-full gap-2"
+                  className="gap-2 rounded-full"
                   variant="ghost"
                   size="sm"
                 >

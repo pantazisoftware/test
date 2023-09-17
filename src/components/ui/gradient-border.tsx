@@ -26,7 +26,7 @@ export function GradientBorder({
         } as CSSProperties
       }
       className={cn(
-        "w-full rounded-md border border-zinc-200 dark:border dark:border-transparent dark:[background:padding-box_var(--bg-color),border-box_var(--border-color)]",
+        "w-full overflow-hidden rounded-md border border-zinc-200 dark:border dark:border-transparent dark:[background:padding-box_var(--bg-color),border-box_var(--border-color)]",
         className
       )}
     >
