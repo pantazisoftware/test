@@ -21,16 +21,11 @@ export const ourFileRouter = {
             return { userId: session.user.id };
         })
         .onUploadComplete(async ({ metadata, file }) => {
-            const session = await prisma.session.findFirst({ where: { sessionToken: cookie }, include: { user: true } });
-
-            if (!session) throw new Error("Unauthorized");
-
-            
             console.log(metadata);
-            console.log(file.url);
+            console.log(file);
             await prisma.user.update({
                 where: {
-                    id: session.user.id
+                    id: metadata.userId
                 },
                 data: {
                     image: file.url
