@@ -73,7 +73,7 @@ export function Header() {
           <div className="flex items-center gap-8">
             <div className="rounded-lg">
               <Link href={"/"} className="z-10 ">
-                <Image alt="Logo" src="/logo.svg" className="w-10 h-10 rounded-full" />
+                <Image alt="Logo" src="/logo.svg" width={32} height={32} className="w-10 h-10 rounded-full" />
               </Link>
             </div>
 
