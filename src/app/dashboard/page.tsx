@@ -16,18 +16,18 @@ export default async function Page() {
 
   return (
     <main>
-      <h1 className="font-display text-2xl pb-6">Dashboard</h1>
+      <h1 className="pb-6 text-2xl font-display">Dashboard</h1>
       <Card className="mb-8">
-        <div className="flex flex-row w-full justify-between items-center px-6">
+        <div className="flex flex-row items-center justify-between w-full px-6">
           <div className="flex items-center gap-4 py-6">
             {(session?.user?.image?.length ?? 0) > 0 ? (
               <img
                 src={"" + session?.user.image}
-                className="w-16 h-16 rounded-full"
+                className="object-cover w-16 h-16 rounded-full"
               />
             ) : (
               <GradientBorder className="rounded-full w-fit">
-                <div className="w-16 h-16 shrink-0 grid place-items-center text-white">
+                <div className="grid w-16 h-16 text-white shrink-0 place-items-center">
                   <p className="font-medium">
                     {session?.user?.email?.substring(0, 1)}
                   </p>
@@ -45,7 +45,7 @@ export default async function Page() {
           </Link>
         </div>
       </Card>
-      <div className="grid sm:grid-cols-2 gap-8 items-start">
+      <div className="grid items-start gap-8 sm:grid-cols-2">
         <Card>
           <CardHeader>
             <CardTitle>Settings</CardTitle>

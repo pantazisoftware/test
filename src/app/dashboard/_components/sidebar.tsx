@@ -108,7 +108,7 @@ export default function Sidebar({ session }: { session: Session }) {
                   {(session.user.image?.length ?? 0) > 0 ? (
                     <img
                       src={"" + session.user.image}
-                      className="w-8 h-8 rounded-full"
+                      className="object-cover w-8 h-8 rounded-full"
                     />
                   ) : (
                     <GradientBorder className="rounded-full w-fit">

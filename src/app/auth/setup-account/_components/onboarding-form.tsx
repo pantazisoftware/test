@@ -62,7 +62,7 @@ export function OnboardingForm({ user }: { user: User }) {
         Finish setting up your account
       </h1>
       <div className="flex items-center gap-8">
-        <Image src={"" + user.image}  alt="Profile picture" className="w-20 h-20 rounded-md" />
+        <Image src={"" + user.image}  alt="Profile picture" className="object-cover w-20 h-20 rounded-md" />
         <div className="px-6 py-4 text-sm border border-dashed rounded-md dark:border-zinc-800 border-zinc-200">
           <UploadButton
             endpoint="profilePictureUploader"

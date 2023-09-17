@@ -69,7 +69,7 @@ export function OnboardingForm({ user }: { user: User }) {
               ? user.image
               : "https://as2.ftcdn.net/v2/jpg/00/64/67/63/1000_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.jpg"
           }
-          className="w-20 h-20 rounded-full"
+          className="object-cover w-20 h-20 rounded-full"
         />
         <div className="w-full px-6 py-4 text-sm border border-dashed rounded-md dark:border-zinc-800 border-zinc-200">
           <UploadButton

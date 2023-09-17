@@ -4,7 +4,7 @@ export default async function Components() {
   return (
     <main>
       <Header />
-      <div>
+      <div className="w-full m-auto max-w-7xl">
         <p>Components Page</p>
       </div>
     </main>

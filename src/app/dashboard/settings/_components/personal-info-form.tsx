@@ -66,7 +66,7 @@ export function PersonalInfo({ session }: { session: Session }) {
                 <Image
                   src={"" + session.user.image}
                   alt="Profile Picture"
-                  className="w-20 h-20 rounded-md aspect-square"
+                  className="object-cover w-20 h-20 rounded-md aspect-square"
                 />
                 <div className="px-6 py-4 text-sm border border-dashed rounded-md dark:border-zinc-800 border-zinc-200">
                   <UploadButton
