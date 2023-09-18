@@ -75,6 +75,17 @@ export default function Page() {
         >
           Signin with Github
         </Button>
+        <Button variant='secondary'
+          disabled={loading}
+          onClick={() => {
+            setLoading(true);
+            signIn("google", {callbackUrl: "/dashboard" });
+            setLoading(false);
+          }}
+          className="rounded-md"
+        >
+          Signin with Google
+        </Button>
         </div>
       </div>
       <p className="pt-4 text-xs text-zinc-400">
