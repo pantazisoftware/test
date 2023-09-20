@@ -61,7 +61,7 @@ export function OnboardingForm({ user }: { user: User }) {
       <p className="text-xs font-normal leading-none opacity-50">OPTIONAL</p>
       </div>
       <div className="flex items-center gap-8 pb-4">
-        <Image alt="profile" layout="responsive"
+        <Image alt="profile"
         width={30}
         height={30}
           src={
