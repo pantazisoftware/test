@@ -13,6 +13,7 @@ export async function getComponent(slug: string) {
   // ----------------------------------------------------------------
   // DO SOME FILTERING WITH THE PRO COMPONENTS; CHECK IF THE USER HAS THE PRO ACCESS.
   // ----------------------------------------------------------------
+
   const component = await prisma.components.findUnique({
     where: { slug: slug },
     include: { category: true },

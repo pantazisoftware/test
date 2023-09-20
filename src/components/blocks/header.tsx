@@ -34,6 +34,14 @@ let tabs = [
       return currentPathanme == "/";
     },
   },
+   {
+    id: 1,
+    label: "Components",
+    href: "/components",
+    matcher: function (currentPathanme: string): boolean {
+      return false;
+    },
+  },
   {
     id: 2,
     label: "Pricing",
