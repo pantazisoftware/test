@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+pre {
+  @apply p-4 overflow-scroll whitespace-pre-wrap;
+}

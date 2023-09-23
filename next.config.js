@@ -17,9 +17,10 @@ const nextConfig = {
   pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],
   experimental: {
     serverActions: true,
+    serverComponentsExternalPackages: ["shiki", "vscode-oniguruma"],
   },
   images: {
-    domains: ["uploadthing.com"],
+    domains: ["uploadthing.com", "cdn.dribbble.com"],
   },
 };
 

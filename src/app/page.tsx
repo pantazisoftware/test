@@ -25,15 +25,16 @@ export default async function Home() {
       <Hero />
       <div className={"relative z-10"}>
         <div className="z-10 w-full p-4 m-auto border max-w-7xl border-white/30 sm:p-8 bg-white/20 rounded-3xl">
-          <Image alt="Billing"
+          <Image
+            alt="Billing"
             layout="responsive"
             width={100}
             height={100}
             src="/assets/billing.png"
             className="z-10 p-4 bg-black rounded-xl"
-           />
+          />
         </div>
-        <div className="top-20 bottom-20 w-full bg-gradient-conic from-rose-500 via-violet-400 to-amber-500 absolute z-[-1]" />
+        <div className="top-20 bottom-20 w-full bg-gradient-conic from-teal-500 via-blue-600 to-indigo-900 absolute z-[-1]" />
       </div>
       <Features />
       <div className="px-4 py-20" id="pricing">
@@ -99,7 +100,7 @@ function Hero() {
           </span>
         </h1>
         <p className="text-center py-6 text-sm sm:text-base lg:text-lg text-muted max-w-[60ch] opacity-80">
-        The best NextJS kit for starting and scaling your software business.
+          The best NextJS kit for starting and scaling your software business.
         </p>
         <div className="flex items-center gap-4">
           <Link href={"/starter-kits"}>
