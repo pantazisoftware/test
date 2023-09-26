@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export function Footer() {
@@ -7,7 +8,13 @@ export function Footer() {
         <div className="grid gap-x-8 gap-y-12 sm:grid-cols-5">
           <div className="flex flex-col col-span-2 gap-6">
             <Link href="/">
-              <img src="/logo.svg" className="w-10 h-10 rounded-full" />
+              <Image
+                width={30}
+                height={30}
+                alt="Logo"
+                src="/logo.svg"
+                className="w-10 h-10 rounded-full"
+              />
             </Link>
             <p className="text-sm opacity-80">
               © Acme, Inc. All rights reserved.

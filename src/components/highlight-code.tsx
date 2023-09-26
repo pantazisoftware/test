@@ -8,7 +8,7 @@ const inconsolata = Inconsolata({
 });
 
 const highlighter = await getHighlighter({
-  theme: "dracula",
+  theme: "github-dark",
   langs: ["javascript", "html"],
 });
 
@@ -16,10 +16,7 @@ export default function HighightCode({ code }: { code: string }) {
   const tokens = highlighter.codeToHtml(code, { lang: "html" });
   return (
     <div
-      className={cn(
-        inconsolata.className,
-        "w-full rounded-xl font-inconsolata"
-      )}
+      className={cn(inconsolata.className, "w-full rounded-xl overflow-hidden")}
       dangerouslySetInnerHTML={{ __html: tokens }}>
       {/* <CopyToClipboard
         text={this.state.value}
