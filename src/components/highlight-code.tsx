@@ -1,17 +1,14 @@
 import { cn } from "@/lib/utils";
 import { Inconsolata } from "next/font/google";
 import { getHighlighter } from "shiki";
-const shiki = require("shiki");
 
 const inconsolata = Inconsolata({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });
 
-const mytheme = shiki.loadTheme("/my-theme.json");
-
 const highlighter = await getHighlighter({
-  theme: mytheme,
+  theme: "dracula",
   langs: ["javascript", "html"],
 });
 
@@ -20,7 +17,7 @@ export default function HighightCode({ code }: { code: string }) {
   return (
     <div
       className={cn(inconsolata.className, "w-full rounded-xl overflow-hidden")}
-      dangerouslySetInnerHTML={{ __html: tokens }}>
+      dangerouslySetInnerHTML={{ __html: tokens || "" }}>
       {/* <CopyToClipboard
         text={this.state.value}
         onCopy={() => this.setState({ copied: true })}>
