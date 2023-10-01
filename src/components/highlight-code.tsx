@@ -8,7 +8,7 @@ const inconsolata = Inconsolata({
   weight: ["400", "500", "600", "700"],
 });
 
-const mytheme = shiki.loadTheme("/public/my-theme.json");
+const mytheme = shiki.loadTheme("/my-theme.json");
 
 const highlighter = await getHighlighter({
   theme: mytheme,
