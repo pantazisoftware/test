@@ -7,20 +7,6 @@ interface Params {
   slug: string;
 }
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { slug: string };
-}) {
-  const component = await getComponent(params.slug);
-
-  return {
-    title: component!.name,
-    description:
-      "Discover UI Library for your next application, landing page and more. Ready to use!",
-  };
-}
-
 export default async function Component({
   params,
 }: {
