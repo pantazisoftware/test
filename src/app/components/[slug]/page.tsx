@@ -18,7 +18,6 @@ export async function generateMetadata({
     title: component!.name,
     description:
       "Discover UI Library for your next application, landing page and more. Ready to use!",
-    icons: component!.thumb,
   };
 }
 

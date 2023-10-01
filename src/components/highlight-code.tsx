@@ -1,4 +1,3 @@
-"use client";
 import { cn } from "@/lib/utils";
 import { Inconsolata } from "next/font/google";
 import { getHighlighter } from "shiki";
