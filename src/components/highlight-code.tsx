@@ -1,3 +1,4 @@
+"use client";
 import { cn } from "@/lib/utils";
 import { Inconsolata } from "next/font/google";
 import { getHighlighter } from "shiki";
@@ -8,7 +9,7 @@ const inconsolata = Inconsolata({
 });
 
 const highlighter = await getHighlighter({
-  theme: "slack-dark",
+  theme: "dark-plus",
   langs: ["javascript", "html"],
 });
 
