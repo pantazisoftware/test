@@ -8,7 +8,7 @@ const inconsolata = Inconsolata({
 });
 
 const highlighter = await getHighlighter({
-  theme: "github-dark",
+  theme: "dark_modern",
   langs: ["javascript", "html"],
 });
 
