@@ -1,32 +1,20 @@
-import { cn } from "@/lib/utils";
+import { highlight } from "@/lib/shiki";
 import { Inconsolata } from "next/font/google";
-import { getHighlighter } from "shiki";
-
-const maintheme = require("shiki/themes/material-theme-palenight.json");
-const htmlLang = require("shiki/languages/html.tmLanguage.json");
-const jsLang = require("shiki/languages/javascript.tmLanguage.json");
 
 const inconsolata = Inconsolata({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });
 
-const highlighter = await getHighlighter({
-  theme: maintheme,
-  langs: [htmlLang, jsLang],
-});
-
-export default function HighightCode({ code }: { code: string }) {
-  const tokens = highlighter.codeToHtml(code, { lang: "html" });
+export default async function HighightCode({ code }: { code: string }) {
+  const tokens = await highlight(code, "github-dark", "html");
   return (
-    <div
-      className={cn(inconsolata.className, "w-full rounded-xl overflow-hidden")}
-      dangerouslySetInnerHTML={{ __html: tokens || "" }}>
-      {/* <CopyToClipboard
-        text={this.state.value}
-        onCopy={() => this.setState({ copied: true })}>
-        <button>Copy to clipboard with button</button>
-      </CopyToClipboard> */}
-    </div>
+    <>
+      <div
+        className="overflow-hidden rounded-xl bg-slate-900"
+        dangerouslySetInnerHTML={{ __html: tokens }}
+        style={{ fontFamily: "var(--font-mono)" }}
+      />
+    </>
   );
 }
