@@ -11,7 +11,7 @@ export default async function HighightCode({ code }: { code: string }) {
   return (
     <>
       <div
-        className="overflow-hidden rounded-xl bg-slate-900"
+        className="overflow-hidden bg-gray-900 rounded-xl dark:bg-gray-900"
         dangerouslySetInnerHTML={{ __html: tokens }}
         style={{ fontFamily: "var(--font-mono)" }}
       />
