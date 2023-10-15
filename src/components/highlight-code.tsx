@@ -2,13 +2,15 @@ import { cn } from "@/lib/utils";
 import { Inconsolata } from "next/font/google";
 import { getHighlighter } from "shiki";
 
+let maintheme = require("shiki/themes/material-theme-palenight.json");
+
 const inconsolata = Inconsolata({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });
 
 const highlighter = await getHighlighter({
-  theme: "dracula",
+  theme: maintheme,
   langs: ["javascript", "html"],
 });
 
