@@ -2,8 +2,10 @@ import { cn } from "@/lib/utils";
 import { Inconsolata } from "next/font/google";
 import { getHighlighter } from "shiki";
 
-let maintheme = require("shiki/themes/material-theme-palenight.json");
-let htmlLang = require("shiki/languages/html.tmLanguage.json");
+const maintheme = require("shiki/themes/material-theme-palenight.json");
+const htmlLang = require("shiki/languages/html.tmLanguage.json");
+const jsLang = require("shiki/languages/javascript.tmLanguage.json");
+
 const inconsolata = Inconsolata({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
@@ -11,6 +13,7 @@ const inconsolata = Inconsolata({
 
 const highlighter = await getHighlighter({
   theme: maintheme,
+  langs: [htmlLang, jsLang],
 });
 
 export default function HighightCode({ code }: { code: string }) {
