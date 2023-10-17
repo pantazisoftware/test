@@ -8,7 +8,8 @@ export async function highlight(code: string, theme: Theme, lang: Lang) {
   setWasm("/shiki/dist/onigasm.wasm");
   setCDN("/shiki/");
   const mytheme = await fs.readFile(
-    process.cwd() + "/public/shiki/themes/github-dark.json",
+    process.cwd() +
+      "https://raw.githubusercontent.com/shikijs/shiki/main/packages/shiki/themes/dark-plus.json",
     "utf8"
   );
   if (!highlighter) {
