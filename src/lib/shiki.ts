@@ -1,14 +1,20 @@
+import { promises as fs } from "fs";
 import type { Highlighter, Lang, Theme } from "shiki";
 import { getHighlighter, renderToHtml, setCDN, setWasm } from "shiki";
+
 //update the shiki
 let highlighter: Highlighter;
 export async function highlight(code: string, theme: Theme, lang: Lang) {
   setWasm("/shiki/dist/onigasm.wasm");
   setCDN("/shiki/");
+  const mytheme = await fs.readFile(
+    process.cwd() + "/public/shiki/themes/github-dark.json",
+    "utf8"
+  );
   if (!highlighter) {
     highlighter = await getHighlighter({
       langs: [lang],
-      theme: theme,
+      theme: mytheme,
     });
   }
 
