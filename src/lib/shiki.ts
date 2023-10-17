@@ -15,7 +15,7 @@ export async function highlight(code: string, theme: Theme, lang: Lang) {
   if (!highlighter) {
     highlighter = await getHighlighter({
       langs: [lang],
-      theme: mytheme,
+      theme: await mytheme,
     });
   }
 
