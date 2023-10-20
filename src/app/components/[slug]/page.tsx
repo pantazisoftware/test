@@ -1,5 +1,5 @@
 import { Header } from "@/components/blocks/header";
-import HighightCode from "@/components/highlight-code";
+import Code from "@/components/prismjs-code";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { getComponent } from "@/lib/components";
 
@@ -33,7 +33,8 @@ export default async function Component({
               }></iframe>
           </TabsContent>
           <TabsContent value="code">
-            <HighightCode code={component!.code!} />
+            {/* <HighightCode code={component!.code!} /> */}
+            <Code code={component!.code!} language="html" />
           </TabsContent>
         </Tabs>
       </div>
