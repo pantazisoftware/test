@@ -76,11 +76,7 @@
   "devDependencies": {
     "@types/prismjs": "^1.26.2",
     "@types/react-copy-to-clipboard": "^5.0.4",
-<<<<<<< HEAD
-    "prisma": "^5.4.2"
-=======
     "encoding": "^0.1.13",
     "prisma": "^5.3.1"
->>>>>>> 5a682073bf9d171b166f1bb041060d2d83f0993f
   }
 }
