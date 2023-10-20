@@ -9,6 +9,7 @@ export default function Code({ code, language }: { code: string, language:string
   }, []);
   return (
     <div className="Code">
+        <h1>Code deployment</h1>
       <pre>
         <code className={`overflow-hidden whitespace-pre-wrap language-${language}`}>{code}</code>
       </pre>
