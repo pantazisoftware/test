@@ -9,7 +9,7 @@ export default function Code({ code, language }: { code: string, language:string
   }, []);
   return (
     <div className="Code">
-      <pre className="overflow-hidden rounded-xl">
+      <pre>
         <code className={`overflow-hidden whitespace-pre-wrap language-${language}`}>{code}</code>
       </pre>
     </div>
