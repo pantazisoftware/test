@@ -9,7 +9,7 @@ type Props = {
 
 export default async function Code({
   code,
-  lang = "javascript",
+  lang = "html",
   theme = "github-dark",
 }: Props) {
   const html = await codeToHtml(code, {

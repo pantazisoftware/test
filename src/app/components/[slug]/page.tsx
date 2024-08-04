@@ -34,7 +34,7 @@ export default async function Component({
               }></iframe>
           </TabsContent>
           <TabsContent value="code">
-            <HighightCode code={component!.code!} />
+            <HighightCode code={component!.code!} lang="html" theme="dracula" />
           </TabsContent>
         </Tabs>
       </div>
