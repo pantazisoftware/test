@@ -33,15 +33,15 @@ export default function Page() {
       )}
       <GradientBorder className="bg-white rounded-full w-fit dark:bg-black">
         <div className="grid w-10 h-10 shrink-0 place-items-center">
-         <Lock size={18} />
+          <Lock size={18} />
         </div>
       </GradientBorder>
 
       <div className="flex flex-col py-8">
-        <p className="text-lg font-medium text-black dark:text-white">Welcome</p>
-        <p className="text-zinc-400">
-          {"Please sign in or sign up below."}
+        <p className="text-lg font-medium text-black dark:text-white">
+          Welcome
         </p>
+        <p className="text-zinc-400">{"Please sign in or sign up below."}</p>
       </div>
       <div className="flex flex-col">
         <div className="flex flex-col pb-4">
@@ -53,39 +53,38 @@ export default function Page() {
           />
         </div>
         <div className="flex flex-col space-y-2">
-        <Button
-          disabled={loading}
-          onClick={() => {
-            setLoading(true);
-            signIn("email", { email: email, callbackUrl: "/dashboard" });
-            setLoading(false);
-          }}
-          className="rounded-md"
-        >
-          Continue with Email
-        </Button>
-        <Button variant='secondary'
-          disabled={loading}
-          onClick={() => {
-            setLoading(true);
-            signIn("github", {callbackUrl: "/dashboard" });
-            setLoading(false);
-          }}
-          className="rounded-md"
-        >
-          Signin with Github
-        </Button>
-        <Button variant='secondary'
-          disabled={loading}
-          onClick={() => {
-            setLoading(true);
-            signIn("google", {callbackUrl: "/dashboard" });
-            setLoading(false);
-          }}
-          className="rounded-md"
-        >
-          Signin with Google
-        </Button>
+          <Button
+            disabled={loading}
+            onClick={() => {
+              setLoading(true);
+              signIn("email", { email: email, callbackUrl: "/dashboard" });
+              setLoading(false);
+            }}
+            className="rounded-md">
+            Continue with Email
+          </Button>
+          <Button
+            variant="secondary"
+            disabled={loading}
+            onClick={() => {
+              setLoading(true);
+              signIn("github", { callbackUrl: "/dashboard" });
+              setLoading(false);
+            }}
+            className="rounded-md">
+            Signin with Github
+          </Button>
+          <Button
+            variant="secondary"
+            disabled={loading}
+            onClick={() => {
+              setLoading(true);
+              signIn("google", { callbackUrl: "/dashboard" });
+              setLoading(false);
+            }}
+            className="rounded-md">
+            Signin with Google
+          </Button>
         </div>
       </div>
       <p className="pt-4 text-xs text-zinc-400">

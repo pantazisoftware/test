@@ -19,6 +19,8 @@ const nextConfig = {
   experimental: {
     serverActions: true,
     serverComponentsExternalPackages: ["shiki", "vscode-oniguruma"],
+    optimizePackageImports: ["shiki"],
+    transpilePackages: ["components", "shared", "shiki"],
   },
   images: {
     domains: ["uploadthing.com", "cdn.dribbble.com"],
