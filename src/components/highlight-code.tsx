@@ -1,14 +1,21 @@
-import { highlight } from "@/lib/shiki";
+import type { BundledLanguage, BundledTheme } from "shiki"; // Import the types from shiki // [!code highlight]
+import { codeToHtml } from "shiki";
 
-export default async function HighightCode({ code }: { code: string }) {
-  const tokens = await highlight(code, "github-dark", "html");
-  return (
-    <>
-      <div
-        className="overflow-hidden bg-gray-900 rounded-xl dark:bg-gray-900"
-        dangerouslySetInnerHTML={{ __html: tokens }}
-        style={{ fontFamily: "var(--font-mono)" }}
-      />
-    </>
-  );
+type Props = {
+  code: string;
+  lang?: BundledLanguage;
+  theme?: BundledTheme;
+};
+
+export default async function Code({
+  code,
+  lang = "javascript",
+  theme = "github-dark",
+}: Props) {
+  const html = await codeToHtml(code, {
+    lang,
+    theme,
+  });
+
+  return <div dangerouslySetInnerHTML={{ __html: html }}></div>;
 }
