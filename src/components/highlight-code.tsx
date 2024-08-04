@@ -1,5 +1,5 @@
-import type { BundledLanguage, BundledTheme } from "shiki"; // Import the types from shiki // [!code highlight]
-import { codeToHtml } from "shiki";
+import type { BundledLanguage, BundledTheme } from "shiki/bundle/web"; // Import the types from shiki // [!code highlight]
+import { codeToHtml } from "shiki/bundle/web";
 
 type Props = {
   code: string;
