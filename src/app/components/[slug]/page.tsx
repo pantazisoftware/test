@@ -17,6 +17,7 @@ export default async function Component({
     <main>
       <Header />
       <div className="w-full px-4 m-auto my-10 max-w-7xl">
+        <p>Something new!!</p>
         <h1 className="pt-5 text-3xl font-bold lg:pt-10">{component!.name}</h1>
         <Tabs defaultValue="preview">
           <TabsList>
